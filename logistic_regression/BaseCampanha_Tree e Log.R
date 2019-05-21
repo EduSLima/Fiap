@@ -4,7 +4,7 @@
 rm(list=ls(all=TRUE))
 
 
-Campanha <- read.csv("E:/LABIA&ML2018/BaseCampanhaVarejo.csv", sep=";")
+Campanha <- read.csv("C:/Users/logonrmlocal/Fiap/logistic_regression/BaseCampanhaVarejo.csv", sep=";")
 
 attach(Campanha)  
 
@@ -93,7 +93,7 @@ hist(yprob)
 pred_class <- predict(modelo_tree ,testData , type = "class")
 pred_class 
  
-Campanha.matriz.de.confusão<-table(RespCampanha, pred_class)
+Campanha.matriz.de.confusão<-table(testData$RespCampanha, pred_class)
 Campanha.matriz.de.confusão
 
 diagonal <- diag(Campanha.matriz.de.confusão)
